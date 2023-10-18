@@ -11,14 +11,14 @@ class ATM:
     def deposit(self, amount):
         if amount > 0:
             self.balance += amount
-            return f"Deposited ${amount}. New balance: ${self.balance}"
+            return f"Deposited INR{amount}. New balance: INR {self.balance}"
         else:
             return "Invalid deposit amount."
 
     def withdraw(self, amount):
         if 0 < amount <= self.balance:
             self.balance -= amount
-            return f"Withdrew ${amount}. New balance: ${self.balance}"
+            return f"Withdrew $ {amount}. New balance: INR {self.balance}"
         elif amount > self.balance:
             return "Insufficient funds."
         else:
@@ -26,7 +26,7 @@ class ATM:
 
 def check_balance():
     balance = atm.check_balance()
-    messagebox.showinfo("Balance", f"Your balance is ${balance}")
+    messagebox.showinfo("Balance", f"Your balance is INR {balance}")
 
 def deposit():
     amount = float(deposit_entry.get())
